@@ -1,0 +1,90 @@
+﻿body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ebebeb;
+    min-height: 100vh;
+}
+
+.box-inicio {
+    display: flex;
+    position: relative;
+    border-radius: 10px;
+    width: 680px;
+    height: 370px;
+    background-color: white;
+    font-family: sans-serif;
+    box-shadow: 10px 7px 5px rgb(0, 0, 0, 0.3);
+}
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 310px;
+    background-color: white;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.box-inicio h1 {
+    margin-left: 15px;
+    font-size: 32px;
+}
+
+.button-ingresar {
+    font-size: 15px;
+    margin-left: 30%;
+    margin-top: 75px;
+    border-radius: 35px;
+    border: none;
+    width: 110px;
+    height: 45px;
+    cursor: pointer;
+    background: #94D5FA;
+    color: black;
+}
+
+.box-usuario{
+    margin: 15px;
+    margin-top: 30px
+}
+
+.box-clave{
+    margin: 15px;
+}
+
+.tb-inicio{
+    border-color: gray;
+    border-radius: 40px;
+    height: 30px;
+}
+
+.right-side {
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+    width: 420px;
+    background-image: url("/imagenes/portada2.gif");
+    background-size: cover;
+    background-position: center;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.titulo-dos{
+    margin-top: 30px;
+    font-family: sans-serif;
+    font-size: 20px;
+    
+}
+
+.descripcion {
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 330px;
+    font-family: "Gill Sans", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}

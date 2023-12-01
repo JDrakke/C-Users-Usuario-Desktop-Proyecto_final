@@ -1,0 +1,23 @@
+﻿body {
+    display: flex;
+    justify-content: center;
+}
+
+
+.txtinforme {
+    display: flex;
+    position: relative;
+    top: 45px;
+    width: 500px;
+    height: 290px;
+}
+
+.buttonenviarinforme {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    top: 140px;
+    left: 18%;
+    width: 300px;
+    height: 70px;
+}

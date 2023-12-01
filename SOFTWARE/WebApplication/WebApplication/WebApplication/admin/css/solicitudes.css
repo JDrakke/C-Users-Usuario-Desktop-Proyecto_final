@@ -1,0 +1,50 @@
+﻿
+body {
+    display: flex;
+}
+
+.table-stock {
+    width: 300px
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.auto-style1 {
+    position: relative;
+    top: 125px;
+    width: 100%;
+    font-size: 25px;
+    font-family: sans-serif;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: white;
+}
+
+td {
+    height: 30px;
+}
+
+th {
+    height: 30px;
+}
+
+.generarexcel {
+    position: relative;
+    left: 600px;
+    bottom: 400px;
+    font-size: 20px;
+    width: 146px;
+    height: 46px;
+}
+
+.buttons {
+    position: absolute;
+    right: 1%;
+    top: -25%;
+    font-size: 18px;
+    width: 100px;
+    height: 36px;
+}

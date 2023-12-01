@@ -1,0 +1,121 @@
+﻿
+body {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #d4d2d2;
+    overflow: hidden;
+    margin: 0;
+}
+
+.box{
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    width: 80px;
+    height: 80px;
+    margin-top: 100%;
+    border-radius: 50%;
+}
+
+.left-panel {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    width: 16%;
+    height: 100vh;
+    left: 0%;
+    top: 5%;
+    background-color: white;
+}
+
+.right-panel {
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    top: -8px;
+    left: 0%;
+    right: 455px;
+    height: 101vh;
+    width: 100%;
+    flex-direction: column;
+}
+
+.top-panel-container{
+    position: relative;
+    top: 7px;
+    height: 55px;
+    width: 100%;
+    background-image: linear-gradient(to right, #11D2D5 , #5785E7);
+}
+
+p{
+    position: relative;
+    right: 5%;
+    top: 1%;
+    font-family: Arial;
+    font-size: 16px;
+    color: white;
+}
+
+.button-left-panel {
+    position: relative;
+    margin-top: 45px;
+    margin-left: 0%;
+    height: 50px;
+    width: 195px;
+    font-size: 15px;
+    color: black;
+    background-color: white;
+    border: none;
+}
+
+    .button-left-panel:hover {
+        background-color: #21BFD9;
+        color: white;
+    }
+
+.clientetab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 140px;
+    height: 49px;
+    top: 0px;
+    left: 695px;
+    color: white;
+    font-family: sans-serif;
+    background-color: #50b1d9;
+}
+
+.iframecliente {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 7px;
+    border: none;
+    background-color: #F2F9F9;
+}
+
+.softmed {
+    position: absolute;
+    top: 2%;
+    font-size: 25px;
+    font-weight: 10px;
+    background: -webkit-linear-gradient(#11D2D5 , #5785E7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: sans-serif;
+}
+
