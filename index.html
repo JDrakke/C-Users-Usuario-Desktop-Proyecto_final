@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Bodega Médica - Softmed</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/img_6.jpg) center/cover no-repeat;
+            color: #333;
+        }
+
+        header {
+            background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/img_6.jpg) center/cover no-repeat;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #ffd700;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: auto;
+        }
+
+        .login {
+            margin-left: auto;
+        }
+
+        nav {
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+
+        .login a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            border: 1px solid #ffd700;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        .login a:hover {
+            background-color: #ffd700;
+            color: #333;
+        }
+
+        .hero, .company-info, .contact {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/img_7.jpg) center/cover no-repeat;
+            color: #fff;
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .hero-content, .text-content, .contact-form {
+            z-index: 1;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .hero p, .company-info p {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .btn-1 {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #333;
+            background-color: #ffd700;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn-1:hover {
+            background-color: #333;
+            color: #ffd700;
+        }
+
+        .company-info h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+
+        .info-slider {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .slide {
+            flex-basis: calc(33.333% - 20px);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .slide img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+            margin-bottom: 15px;
+        }
+
+        .text-content {
+            text-align: left;
+            padding: 0 20px;
+        }
+
+        .text-content h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #ffd700;
+        }
+
+        .text-content p {
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .slider-nav {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .arrow {
+            font-size: 24px;
+            cursor: pointer;
+            margin: 0 10px;
+            color: #ffd700;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: color 0.3s ease-in-out;
+        }
+
+        .arrow:hover {
+            color: #333;
+        }
+
+        .contact-info ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .contact-info li {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .social-media a {
+            color: #fff;
+            font-size: 24px;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .social-media a:hover {
+            color: #ffd700;
+        }
+
+        .contact-form label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .contact-form button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #333;
+            background-color: #ffd700;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        .contact-form button:hover {
+            background-color: #333;
+            color: #ffd700;
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 450px;
+            border: 0;
+            border-radius: 5px;
+        }
+
+        .footer {
+            background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/img_6.jpg) center/cover no-repeat;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="#" class="logo">Softmed</a>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="login">
+                <a href="#">Iniciar Sesión</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Software Control de Bodega</h1>
+                <p>Gestiona eficientemente tus equipos médicos e insumos con nuestra solución especializada.</p>
+                <a href="link_a_tu_software_en_C#" class="btn-1">Más información</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="company-info">
+        <div class="container">
+            <div class="info-slider">
+                <div class="slide" id="vision">
+                    <img src="images/img_1.jpg" alt="Visión de la Empresa">
+                    <div class="text-content">
+                        <h2>Visión</h2>
+                        <p>Ser la referencia líder en soluciones tecnológicas para el control de bodega en el sector de insumos y equipos médicos...</p>
+                    </div>
+                </div>
+                <div class="slide" id="mision">
+                    <img src="images/img_2.jpg" alt="Misión de la Empresa">
+                    <div class="text-content">
+                        <h2>Misión</h2>
+                        <p>Facilitar la gestión eficiente y precisa de insumos y equipos médicos a través de soluciones tecnológicas innovadoras...</p>
+                    </div>
+                </div>
+                <div class="slide" id="propuesta">
+                    <img src="images/img_3.jpg" alt="Propuesta de Valor de la Empresa">
+                    <div class="text-content">
+                        <h2>Propuesta de Valor</h2>
+                        <p>En Softmed, nos dedicamos a ofrecer soluciones tecnológicas de vanguardia diseñadas específicamente para el control de bodega en el ámbito médico...</p>
+                        <ul>
+                            <!-- Contenido adicional -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-nav">
+                <div class="arrow" id="prev">&#9665;</div>
+                <div class="arrow" id="next">&#9655;</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <h2>Contacto</h2>
+            <div class="contact-info">
+                <ul>
+                    <li><i class="fas fa-envelope"></i> Softmed@gmail.cl</li>
+                    <li><i class="fas fa-phone"></i> +56 9 56897856</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Jorge VI 110, 7580030 Las Condes, Región Metropolitana</li>
+                </ul>
+            </div>
+            <div class="social-media">
+                <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-form-map">
+        <div class="container">
+            <div class="contact-form">
+                <h3>Envíanos un mensaje</h3>
+                <form action="https://formspree.io/tu_email" method="POST">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+                    <button type="submit">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="map">
+        <div class="container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3330.446588026565!2d-70.57640092524967!3d-33.4115994955219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzPCsDI0JzQxLjgiUyA3MMKwMzQnMjUuOCJX!5e0!3m2!1ses!2scl!4v1701027927820!5m2!1ses!2scl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 Softmed. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
